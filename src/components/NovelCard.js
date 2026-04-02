@@ -13,9 +13,10 @@ export default function NovelCard({ novel, priority = false }) {
             src={novel.cover_image_url}
             alt={novel.title}
             fill
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 200px"
+            sizes="(max-width: 480px) 33vw, (max-width: 640px) 25vw, (max-width: 1024px) 20vw, 160px"
             className={styles.image}
             priority={priority}
+            quality={75}
           />
         ) : (
           <div className={styles.placeholder}>
