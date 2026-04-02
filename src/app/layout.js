@@ -31,6 +31,10 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://nap5k.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://ewsxditmxzbyedhzwgps.supabase.co" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-61ER68V4M3" />
+        <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-61ER68V4M3');` }} />
+        {/* Monetag */}
         <script dangerouslySetInnerHTML={{ __html: `(function(){var s=document.createElement('script');s.src='https://5gvci.com/act/files/tag.min.js?z=10823010';s.async=true;s.setAttribute('data-cfasync','false');document.head.appendChild(s);})()` }} />
         <script dangerouslySetInnerHTML={{ __html: `(function(s){s.dataset.zone='10823012',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))` }} />
         <script dangerouslySetInnerHTML={{ __html: `(function(s){s.dataset.zone='10823018',s.src='https://nap5k.com/tag.min.js'})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))` }} />
