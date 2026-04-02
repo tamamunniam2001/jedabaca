@@ -135,8 +135,12 @@ export default function ChapterPage() {
           setRelatedEbooks(relatedData || [])
         }
 
-        await supabase.from('chapters')
-          .update({ views: (chapterData.views || 0) + 1 }).eq('id', params.chapterId)
+        // Track view chapter — hanya sekali per sesi
+        const viewKey = `viewed_chapter_${params.chapterId}`
+        if (!sessionStorage.getItem(viewKey)) {
+          sessionStorage.setItem(viewKey, '1')
+          await supabase.rpc('increment_chapter_views', { chapter_id: params.chapterId })
+        }
 
         await Promise.all([
           fetchRatings(params.chapterId),

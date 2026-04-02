@@ -44,8 +44,12 @@ export default function EbookPage() {
         }
         setNovel(data)
 
-        // Track view
-        await supabase.from('novels').update({ views: (data.views || 0) + 1 }).eq('id', data.id)
+        // Track view — hanya sekali per sesi, pakai RPC increment untuk hindari race condition
+        const viewKey = `viewed_novel_${data.id}`
+        if (!sessionStorage.getItem(viewKey)) {
+          sessionStorage.setItem(viewKey, '1')
+          await supabase.rpc('increment_novel_views', { novel_id: data.id })
+        }
 
         // Fetch author name from profiles
         if (data.author_id) {
