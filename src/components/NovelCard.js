@@ -16,7 +16,7 @@ export default function NovelCard({ novel, priority = false }) {
             sizes="(max-width: 480px) 33vw, (max-width: 640px) 25vw, (max-width: 1024px) 20vw, 160px"
             className={styles.image}
             priority={priority}
-            quality={75}
+            quality={65}
           />
         ) : (
           <div className={styles.placeholder}>

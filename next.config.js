@@ -5,8 +5,14 @@ const nextConfig = {
     optimizeCss: true,
   },
   compiler: {
-    // Remove console.log in production
     removeConsole: process.env.NODE_ENV === 'production',
+  },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Kurangi polyfills untuk browser modern
+      config.target = ['web', 'es2020']
+    }
+    return config
   },
   images: {
     formats: ['image/webp', 'image/avif'],
