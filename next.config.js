@@ -4,6 +4,10 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  compiler: {
+    // Remove console.log in production
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
   images: {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 86400,
@@ -23,7 +27,7 @@ const nextConfig = {
         ],
       },
       {
-        source: '/(.*)\\.(js|css|woff2|png|jpg|jpeg|webp|avif|svg|ico)',
+        source: '/_next/static/(.*)',
         headers: [
           { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
         ],
