@@ -21,6 +21,12 @@ export default function RootLayout({ children }) {
     <html lang="id">
       <head>
         <link rel="icon" type="image/png" href="/icon-192.png" />
+        <script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="225841"
+          async
+          data-cfasync="false"
+        />
       </head>
       <body>
         <Navbar />
