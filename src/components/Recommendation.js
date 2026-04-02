@@ -15,7 +15,27 @@ export default function Recommendation() {
       .then(({ data }) => { setNovels(data || []); setLoading(false) })
   }, [])
 
-  if (loading || novels.length === 0) return null
+  if (loading) return (
+    <section className={styles.section}>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <h2 className={styles.title}>Rekomendasi</h2>
+          <p className={styles.subtitle}>E-book terpopuler minggu ini</p>
+        </div>
+        <div className={styles.grid}>
+          {Array.from({ length: 6 }).map((_, i) => (
+            <div key={i} className={styles.skeletonCard}>
+              <div className={styles.skeletonCover} />
+              <div className={styles.skeletonLine} />
+              <div className={styles.skeletonLineShort} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+
+  if (novels.length === 0) return null
 
   return (
     <section className={styles.section}>

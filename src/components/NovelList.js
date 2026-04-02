@@ -87,7 +87,15 @@ export default function NovelList() {
         </div>
 
         {loading ? (
-          <div className={styles.loading}>Memuat e-book...</div>
+          <div className={styles.grid}>
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className={styles.skeletonCard}>
+                <div className={styles.skeletonCover} />
+                <div className={styles.skeletonLine} />
+                <div className={styles.skeletonLineShort} />
+              </div>
+            ))}
+          </div>
         ) : novels.length === 0 ? (
           <div className={styles.empty}>Belum ada e-book tersedia</div>
         ) : (

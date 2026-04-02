@@ -32,3 +32,37 @@
 @media (min-width: 640px) { .grid { grid-template-columns: repeat(5, 1fr); } }
 @media (min-width: 1024px) { .grid { grid-template-columns: repeat(6, 1fr); gap: 1.5rem; } }
 @media (max-width: 480px) { .section { padding: 2rem 1rem; } }
+
+/* Skeleton */
+.skeletonCard { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.skeletonCover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f0edf8 25%, #e8e4f0 50%, #f0edf8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.skeletonLine {
+  height: 12px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0edf8 25%, #e8e4f0 50%, #f0edf8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.skeletonLineShort {
+  height: 10px;
+  width: 60%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f0edf8 25%, #e8e4f0 50%, #f0edf8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
