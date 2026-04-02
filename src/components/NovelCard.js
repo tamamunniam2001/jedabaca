@@ -1,14 +1,22 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from './NovelCard.module.css'
 
-export default function NovelCard({ novel }) {
+export default function NovelCard({ novel, priority = false }) {
   const slug = novel.slug || novel.id
   return (
     <Link href={`/ebook/${slug}`} className={styles.card}>
       <div className={styles.cover}>
         {novel.cover_image_url ? (
-          <img src={novel.cover_image_url} alt={novel.title} className={styles.image} />
+          <Image
+            src={novel.cover_image_url}
+            alt={novel.title}
+            fill
+            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 200px"
+            className={styles.image}
+            priority={priority}
+          />
         ) : (
           <div className={styles.placeholder}>
             <span>{novel.title?.[0] || '?'}</span>

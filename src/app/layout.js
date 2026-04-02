@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PWAInstaller from '@/components/PWAInstaller'
 import ServiceWorkerRegister from '@/components/ServiceWorkerRegister'
+import Script from 'next/script'
 
 export const metadata = {
   title: 'Jeda Baca - Baca E-book Online',
@@ -24,11 +25,6 @@ export default function RootLayout({ children }) {
     <html lang="id">
       <head>
         <link rel="icon" type="image/png" href="/icon-192.png" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7860007029832598"
-          crossOrigin="anonymous"
-        />
       </head>
       <body>
         <Navbar />
@@ -36,6 +32,12 @@ export default function RootLayout({ children }) {
         <Footer />
         <PWAInstaller />
         <ServiceWorkerRegister />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7860007029832598"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )

@@ -25,7 +25,7 @@ export default function Recommendation() {
           <p className={styles.subtitle}>E-book terpopuler minggu ini</p>
         </div>
         <div className={styles.grid}>
-          {novels.map(novel => <NovelCard key={novel.id} novel={novel} />)}
+          {novels.map((novel, i) => <NovelCard key={novel.id} novel={novel} priority={i < 3} />)}
         </div>
       </div>
     </section>
