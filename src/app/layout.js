@@ -41,6 +41,13 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
+        <Script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="225902"
+          async
+          data-cfasync="false"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
