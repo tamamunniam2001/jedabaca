@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import PWAInstaller from '@/components/PWAInstaller'
 import ServiceWorkerRegister from '@/components/ServiceWorkerRegister'
+import NativeBanner from '@/components/NativeBanner'
 import Script from 'next/script'
 
 export const metadata = {
@@ -42,6 +43,7 @@ export default function RootLayout({ children }) {
       <body>
         <Navbar />
         {children}
+        <NativeBanner />
         <Footer />
         <PWAInstaller />
         <ServiceWorkerRegister />
