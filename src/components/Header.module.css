@@ -1,0 +1,67 @@
+.header {
+  background: linear-gradient(135deg, #f8f7fc 0%, #faf8ff 100%);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid #e8e4f3;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #5a4a7f;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.5px;
+}
+
+.tagline {
+  font-size: 1rem;
+  color: #8b7aaf;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .header {
+    padding: 1.5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .header {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .header {
+    padding: 2.5rem 2rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+  }
+}

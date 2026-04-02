@@ -1,0 +1,221 @@
+.main {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.loading,
+.empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.headerSection {
+  background: #fff;
+  border-bottom: 1px solid #e8e4f3;
+  padding: 2rem 1.5rem;
+}
+
+.backBtn {
+  display: inline-block;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  transition: all var(--transition-fast);
+}
+
+.backBtn:hover { color: var(--primary-dark); transform: translateX(-3px); }
+
+.headerContent {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2rem;
+  animation: slideUp 400ms ease-out;
+}
+
+.coverImage img,
+.placeholderCover {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #e8e4f3;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--neutral-gray);
+}
+
+.novelInfo { color: var(--text-primary); }
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+
+.author { font-size: 0.9rem; margin: 0 0 1rem; color: var(--text-secondary); font-weight: 500; }
+
+.meta { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+
+.status,
+.genre {
+  display: inline-block;
+  padding: 0.3rem 0.875rem;
+  background: var(--neutral-gray);
+  border: 1px solid #e8e4f3;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  text-transform: capitalize;
+}
+
+.description { font-size: 0.9rem; line-height: 1.7; margin: 0 0 1.5rem; color: var(--text-secondary); }
+
+.stats { display: flex; gap: 2rem; margin-bottom: 1.5rem; }
+
+.stat { display: flex; flex-direction: column; align-items: center; }
+
+.statValue { font-size: 1.4rem; font-weight: 800; color: var(--primary-dark); letter-spacing: -0.3px; }
+
+.statLabel { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.2rem; font-weight: 500; }
+
+.loginPrompt {
+  background: var(--neutral-light);
+  border: 1px solid #e8e4f3;
+  padding: 1.25rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.loginPrompt p { margin: 0 0 0.875rem; font-size: 0.9rem; color: var(--text-secondary); }
+
+.loginBtn {
+  display: inline-block;
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 0.65rem 1.75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.loginBtn:hover { background: var(--primary-medium); }
+
+.chaptersSection { padding: 2.5rem 1.5rem; }
+
+.chaptersTitle { font-size: 1.1rem; font-weight: 800; color: var(--text-primary); margin: 0 0 1.5rem; letter-spacing: -0.3px; }
+
+.emptyChapters { text-align: center; padding: 3rem 1rem; color: var(--text-secondary); font-size: 0.9rem; }
+
+.chaptersList { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.chapterItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e8e4f3;
+  border-radius: 10px;
+  transition: all var(--transition-fast);
+  animation: slideUp 400ms ease-out;
+}
+
+.chapterItem:hover { border-color: var(--primary-light); box-shadow: var(--shadow-sm); transform: translateX(3px); }
+
+.chapterInfo { flex: 1; }
+
+.chapterNumber { margin: 0; font-size: 0.875rem; font-weight: 700; color: var(--text-primary); }
+
+.chapterTitle { margin: 0.2rem 0 0.3rem; font-size: 0.875rem; color: var(--text-secondary); }
+
+.chapterDate { margin: 0; font-size: 0.75rem; color: var(--text-light); }
+
+.chapterActions { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+
+.readLink {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 0.55rem 1.25rem;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: 0.825rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.readLink:hover { background: var(--primary-medium); }
+
+.ownerActions { margin-top: 1.25rem; }
+
+.editBtn {
+  display: inline-block;
+  background: #fff;
+  color: var(--primary-dark);
+  border: 1.5px solid var(--primary-dark);
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.editBtn:hover { background: var(--primary-dark); color: #fff; }
+
+.editChapterBtn {
+  background: #fff;
+  color: var(--text-secondary);
+  border: 1px solid #e5e7eb;
+  padding: 0.5rem 0.875rem;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 0.775rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.editChapterBtn:hover { border-color: var(--primary-light); color: var(--primary-dark); }
+
+@media (max-width: 640px) {
+  .headerSection { padding: 1.5rem 1rem; }
+  .headerContent { grid-template-columns: 1fr; gap: 1.25rem; }
+  .coverImage { max-width: 140px; margin: 0 auto; }
+  .title { font-size: 1.4rem; }
+  .chaptersSection { padding: 1.75rem 1rem; }
+  .chapterItem { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .readLink { width: 100%; text-align: center; }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .headerContent { grid-template-columns: 140px 1fr; gap: 1.5rem; }
+  .title { font-size: 1.5rem; }
+}
+
+@media (min-width: 1025px) {
+  .headerContent { grid-template-columns: 200px 1fr; gap: 2.5rem; }
+  .title { font-size: 2rem; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}

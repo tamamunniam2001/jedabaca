@@ -1,0 +1,167 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 200ms ease-out;
+}
+
+.modal {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  animation: slideUp 250ms ease-out;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e8e4f0;
+  background: #f8f7fc;
+  flex-shrink: 0;
+}
+
+.modalHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.previewBadge {
+  background: var(--primary-dark);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.25rem 0.625rem;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.modalTitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 6px;
+  transition: all 0.15s;
+  line-height: 1;
+}
+
+.closeBtn:hover {
+  background: #e8e4f0;
+  color: var(--primary-dark);
+}
+
+.body {
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Chapter Header — mirrors actual chapter page */
+.chapterHeader {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+  padding: 2rem 2.5rem;
+}
+
+.novelName {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chapterTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Content — mirrors actual reading experience */
+.content {
+  padding: 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #2d2d2d;
+  word-spacing: 0.05em;
+}
+
+.content :global(h2) {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 1.5rem 0 0.75rem;
+}
+
+.content :global(h3) {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 1.25rem 0 0.5rem;
+}
+
+.content :global(p) {
+  margin: 0 0 1rem;
+}
+
+.content :global(blockquote) {
+  border-left: 3px solid var(--primary-medium);
+  padding: 0.5rem 1rem;
+  color: #666;
+  font-style: italic;
+  margin: 1rem 0;
+  background: #f8f7fc;
+  border-radius: 0 8px 8px 0;
+}
+
+.content :global(ul), .content :global(ol) {
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+
+.content :global(li) { margin-bottom: 0.4rem; }
+.content :global(strong) { font-weight: 700; }
+.content :global(em) { font-style: italic; }
+
+@media (max-width: 640px) {
+  .overlay { padding: 0; align-items: flex-end; }
+  .modal { border-radius: 16px 16px 0 0; max-height: 95vh; }
+  .chapterHeader { padding: 1.5rem; }
+  .chapterTitle { font-size: 1.15rem; }
+  .content { padding: 1.5rem; font-size: 1rem; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}

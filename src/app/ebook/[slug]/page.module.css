@@ -1,0 +1,244 @@
+.main { min-height: 100vh; background: #f7f7f9; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+
+.loading, .empty { text-align: center; padding: 4rem 1rem; color: var(--text-secondary); }
+
+.headerSection { background: #fff; border-bottom: 1px solid #ebebf0; padding: 2rem 0; }
+
+.backBtn { display: inline-block; color: var(--text-secondary); font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; transition: color 0.15s; }
+.backBtn:hover { color: var(--primary-dark); }
+
+.headerContent { display: flex; gap: 2.5rem; align-items: flex-start; }
+
+.coverWrap { flex-shrink: 0; width: 200px; }
+.coverImg, .placeholderCover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  display: block;
+  background: #ddd;
+}
+
+.novelInfo { flex: 1; min-width: 0; }
+
+.title { font-size: 2rem; font-weight: 800; margin: 0 0 0.5rem; color: #1a1a2e; letter-spacing: -0.5px; }
+
+.metaRow { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
+
+.genre { color: #e91e8c; font-weight: 700; font-size: 0.9rem; }
+
+.updated { color: #888; font-size: 0.85rem; display: flex; align-items: center; gap: 0.3rem; }
+
+.authorRow { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.9rem; }
+.byLabel { color: #555; font-weight: 500; }
+.authorName { color: #e91e8c; font-weight: 700; }
+.statusBadge { color: #888; font-size: 0.85rem; }
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.5rem;
+  flex-wrap: wrap;
+}
+
+.ratingScore { font-size: 2rem; font-weight: 800; color: #1a1a2e; line-height: 1; }
+
+.stars { display: flex; gap: 2px; align-items: center; }
+
+.ratingMeta { font-size: 0.82rem; color: #888; }
+
+.statDivider { width: 1px; height: 36px; background: #e0e0e0; margin: 0 0.5rem; }
+
+.statBlock { display: flex; flex-direction: column; align-items: center; }
+.statNum { font-size: 1.6rem; font-weight: 800; color: #1a1a2e; line-height: 1; }
+.statLbl { font-size: 0.75rem; color: #888; margin-top: 2px; }
+
+.actions { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+
+.readBtn {
+  background: #e91e8c;
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.readBtn:hover { background: #c2185b; }
+
+.bookmarkBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  color: #e91e8c;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.editBtn {
+  background: #fff;
+  color: var(--primary-dark);
+  border: 1.5px solid var(--primary-dark);
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.shareRow { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.shareLabel { font-size: 0.9rem; color: #555; font-weight: 500; }
+
+.shareBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  text-decoration: none;
+}
+.shareBtn:hover { opacity: 0.85; }
+.fb { background: #1877f2; }
+.tw { background: #000; }
+.wa { background: #25d366; }
+.rd { background: #ff4500; }
+.cp { background: #888; }
+
+/* Description */
+.descSection { padding: 2rem 0; }
+.sectionTitle { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin: 0 0 0.75rem; }
+.description { font-size: 0.9rem; line-height: 1.8; color: #555; margin: 0; }
+
+/* Chapters */
+.chaptersSection { padding: 2rem 0 3rem; }
+.chaptersTitle { font-size: 1.1rem; font-weight: 800; color: #1a1a2e; margin: 0 0 1rem; }
+.emptyChapters { text-align: center; padding: 2rem; color: #888; font-size: 0.9rem; }
+.chaptersList { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.chapterItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.25rem;
+  background: #fff;
+  border: 1px solid #ebebf0;
+  border-radius: 10px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.chapterItem:hover { border-color: var(--primary-light); box-shadow: 0 2px 8px rgba(90,74,127,0.08); }
+
+.chapterInfo { flex: 1; }
+.chapterNumber { margin: 0; font-size: 0.875rem; font-weight: 700; color: #1a1a2e; }
+.chapterTitle { margin: 0 0 0.25rem; font-size: 1rem; font-weight: 700; color: #1a1a2e; }
+.chapterDate { margin: 0; font-size: 0.75rem; color: #aaa; }
+
+.chapterActions { display: flex; gap: 0.5rem; align-items: center; }
+
+.readLink {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 0.5rem 1.1rem;
+  border-radius: 7px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.readLink:hover { background: var(--primary-medium); }
+
+.editChapterBtn {
+  background: #fff;
+  color: #888;
+  border: 1px solid #e0e0e0;
+  padding: 0.45rem 0.875rem;
+  border-radius: 7px;
+  font-size: 0.775rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .headerContent { flex-direction: column; gap: 1.25rem; }
+  .coverWrap { width: 130px; margin: 0 auto; }
+  .title { font-size: 1.4rem; }
+  .ratingRow { gap: 0.5rem; }
+  .ratingScore { font-size: 1.5rem; }
+  .statNum { font-size: 1.2rem; }
+  .headerSection { padding: 1.5rem 0; }
+}
+
+/* Bookmark active */
+.bookmarkActive { color: var(--primary-dark) !important; font-weight: 700; }
+
+/* Rating & Review */
+.reviewSection { padding: 2rem 0 3rem; border-top: 1px solid #ebebf0; }
+
+.ratingForm { background: #fff; border: 1px solid #ebebf0; border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; }
+
+.ratingFormLabel { font-size: 0.875rem; font-weight: 600; color: #555; margin: 0 0 0.5rem; }
+
+.starInput { display: flex; align-items: center; gap: 4px; margin-bottom: 0.875rem; }
+
+.starBtn { background: none; border: none; cursor: pointer; padding: 2px; line-height: 0; transition: transform 0.1s; }
+.starBtn:hover { transform: scale(1.15); }
+
+.ratingSelected { font-size: 0.85rem; font-weight: 700; color: #f5a623; margin-left: 0.5rem; }
+
+.reviewInput {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+.reviewInput:focus { border-color: var(--primary-light); }
+
+.submitReview {
+  margin-top: 0.75rem;
+  background: var(--primary-dark);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.submitReview:hover:not(:disabled) { background: var(--primary-medium); }
+.submitReview:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.loginNote { font-size: 0.875rem; color: #888; margin-bottom: 1.5rem; }
+.loginLink { color: var(--primary-dark); font-weight: 700; }
+
+.reviewList { display: flex; flex-direction: column; gap: 0.875rem; }
+
+.reviewItem { background: #fff; border: 1px solid #ebebf0; border-radius: 10px; padding: 1rem 1.25rem; }
+
+.reviewHeader { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+
+.reviewAuthor { font-weight: 700; font-size: 0.875rem; color: #1a1a2e; }
+
+.reviewStars { display: flex; gap: 2px; }
+
+.reviewDate { font-size: 0.75rem; color: #aaa; margin-left: auto; }
+
+.reviewText { font-size: 0.875rem; color: #555; line-height: 1.6; margin: 0; }

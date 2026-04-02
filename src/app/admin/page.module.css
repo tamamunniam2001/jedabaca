@@ -1,0 +1,110 @@
+.main { min-height: 100vh; background: #f7f7f9; padding: 2.5rem 0; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+.loading { text-align: center; padding: 4rem; color: #888; }
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.title { font-size: 1.6rem; font-weight: 800; color: #1a1a2e; margin: 0 0 0.25rem; }
+.subtitle { font-size: 0.875rem; color: #888; margin: 0; }
+
+.totalBadge {
+  background: var(--primary-dark);
+  color: #fff;
+  padding: 0.35rem 0.875rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.message {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+.success { background: #f0fdf4; border: 1px solid #bbf7d0; color: #16a34a; }
+.error { background: #fef2f2; border: 1px solid #fecaca; color: #dc2626; }
+
+.search {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: #fff;
+  margin-bottom: 1.25rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.search:focus { border-color: var(--primary-light); }
+
+.tableWrap { background: #fff; border: 1px solid #ebebf0; border-radius: 12px; overflow: hidden; }
+
+.table { width: 100%; border-collapse: collapse; }
+
+.table thead tr { background: #f7f7f9; border-bottom: 1px solid #ebebf0; }
+
+.table th {
+  padding: 0.875rem 1.25rem;
+  text-align: left;
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table td {
+  padding: 0.875rem 1.25rem;
+  font-size: 0.875rem;
+  color: #1a1a2e;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.table tbody tr:last-child td { border-bottom: none; }
+.table tbody tr:hover td { background: #fafafa; }
+
+.empty { color: #bbb; }
+
+.roleBadge {
+  display: inline-block;
+  padding: 0.2rem 0.625rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.roleReader { background: #f3f4f6; color: #6b7280; }
+.roleAuthor { background: #ede9fe; color: #7c3aed; }
+.roleAdmin { background: #fef3c7; color: #d97706; }
+
+.roleSelect {
+  padding: 0.4rem 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 7px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  background: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.roleSelect:focus { border-color: var(--primary-light); }
+.roleSelect:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.emptyRow { text-align: center; color: #aaa; padding: 2rem !important; }
+
+@media (max-width: 640px) {
+  .table th:nth-child(2), .table td:nth-child(2) { display: none; }
+}
