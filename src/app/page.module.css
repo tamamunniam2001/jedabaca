@@ -37,4 +37,10 @@
 @media (min-width: 480px) { .grid { grid-template-columns: repeat(4, 1fr); } }
 @media (min-width: 640px) { .grid { grid-template-columns: repeat(5, 1fr); } }
 @media (min-width: 1024px) { .grid { grid-template-columns: repeat(6, 1fr); gap: 1.5rem; } }
+.bannerSection {
+  background: #fff;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
 @media (max-width: 480px) { .recSection { padding: 2rem 1rem; } }

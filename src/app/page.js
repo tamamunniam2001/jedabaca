@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 import NovelCard from '@/components/NovelCard'
 import NovelListClient from '@/components/NovelListClient'
+import NativeBanner from '@/components/NativeBanner'
 import styles from './page.module.css'
 
 const supabaseServer = createClient(
@@ -44,7 +45,10 @@ export default async function HomePage() {
         </section>
       )}
 
-      {/* Novel List — SSR untuk halaman pertama, client untuk pagination */}
+      {/* Native Banner Ad */}
+      <NativeBanner />
+
+      {/* Novel List */}
       <NovelListClient initialNovels={novels || []} initialTotal={count || 0} />
     </main>
   )
