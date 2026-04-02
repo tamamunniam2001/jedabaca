@@ -47,6 +47,7 @@ export default function RootLayout({ children }) {
           async
           strategy="afterInteractive"
         />
+        <Script id="monetag-vignette" strategy="afterInteractive">{`(function(s){s.dataset.zone='10823012',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}</Script>
       </body>
     </html>
   )
