@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
         {/* Monetag in-page push */}
         <script dangerouslySetInnerHTML={{ __html: `(function(s){s.dataset.zone='10823018',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))` }} />
         {/* Monetag tag */}
-        <script src="https://5gvci.com/act/files/tag.min.js?z=10823010" data-cfasync="false" async />
+        <script dangerouslySetInnerHTML={{ __html: `var s=document.createElement('script');s.src='https://5gvci.com/act/files/tag.min.js?z=10823010';s.async=true;s.setAttribute('data-cfasync','false');document.head.appendChild(s);` }} />
       </head>
       <body>
         <Navbar />
