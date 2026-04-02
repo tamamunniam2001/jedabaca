@@ -48,6 +48,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
         <Script id="monetag-vignette" strategy="afterInteractive">{`(function(s){s.dataset.zone='10823012',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}</Script>
+        <Script id="monetag-zone-2" strategy="afterInteractive">{`(function(s){s.dataset.zone='10823018',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}</Script>
       </body>
     </html>
   )
