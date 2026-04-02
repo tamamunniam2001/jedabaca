@@ -8,6 +8,9 @@ export const metadata = {
   title: 'Jeda Baca - Baca E-book Online',
   description: 'Platform membaca dan berbagi e-book Indonesia',
   manifest: '/manifest.json',
+  verification: {
+    google: 'iF1OO-P86wQWtIZoA0cYJtlwQQTmE00S_EN5Es0H4J0',
+  },
 }
 
 export const viewport = {
