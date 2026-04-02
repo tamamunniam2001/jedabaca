@@ -1,6 +1,6 @@
 .main { min-height: 100vh; background: #f7f7f9; padding: 2.5rem 0; }
 
-.container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+.container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
 
 .loading { text-align: center; padding: 4rem; color: #888; }
 
@@ -24,6 +24,95 @@
   font-size: 0.8rem;
   font-weight: 700;
 }
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.statCard {
+  background: #fff;
+  border: 1px solid #ebebf0;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.statIcon { font-size: 1.75rem; line-height: 1; }
+.statNum { font-size: 1.4rem; font-weight: 800; color: #1a1a2e; line-height: 1; }
+.statLbl { font-size: 0.775rem; color: #888; margin-top: 0.2rem; }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 2px solid #ebebf0;
+  padding-bottom: 0;
+}
+
+.tab {
+  padding: 0.6rem 1.25rem;
+  border: none;
+  background: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.15s;
+  border-radius: 6px 6px 0 0;
+}
+
+.tab:hover { color: var(--primary-dark); }
+.tabActive { color: var(--primary-dark) !important; border-bottom-color: var(--primary-dark) !important; }
+
+/* Analytics Controls */
+.analyticsControls {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  align-items: center;
+}
+
+/* Ebook cell */
+.ebookLink { text-decoration: none; color: inherit; }
+.ebookCell { display: flex; align-items: center; gap: 0.625rem; }
+
+.miniCover {
+  width: 32px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.miniCoverPlaceholder {
+  width: 32px;
+  height: 42px;
+  background: var(--neutral-gray);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.875rem;
+  color: var(--primary-dark);
+  flex-shrink: 0;
+}
+
+.rankNum { color: #aaa; font-weight: 700; font-size: 0.8rem; }
+
+.statusPublished { background: #d1fae5; color: #065f46; }
+.statusDraft { background: #fef3c7; color: #92400e; }
+
+.totalInfo { font-size: 0.8rem; color: #aaa; margin-top: 0.75rem; text-align: right; }
 
 .message {
   padding: 0.75rem 1rem;
@@ -50,28 +139,32 @@
 }
 .search:focus { border-color: var(--primary-light); }
 
-.tableWrap { background: #fff; border: 1px solid #ebebf0; border-radius: 12px; overflow: hidden; }
+.tableWrap { background: #fff; border: 1px solid #ebebf0; border-radius: 12px; overflow: hidden; overflow-x: auto; }
 
-.table { width: 100%; border-collapse: collapse; }
+.table { width: 100%; border-collapse: collapse; min-width: 600px; }
 
 .table thead tr { background: #f7f7f9; border-bottom: 1px solid #ebebf0; }
 
 .table th {
-  padding: 0.875rem 1.25rem;
+  padding: 0.875rem 1rem;
   text-align: left;
   font-size: 0.775rem;
   font-weight: 700;
   color: #888;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 .table td {
-  padding: 0.875rem 1.25rem;
+  padding: 0.75rem 1rem;
   font-size: 0.875rem;
   color: #1a1a2e;
   border-bottom: 1px solid #f3f4f6;
+  white-space: nowrap;
 }
+
+.table td:nth-child(2) { white-space: normal; min-width: 180px; }
 
 .table tbody tr:last-child td { border-bottom: none; }
 .table tbody tr:hover td { background: #fafafa; }
@@ -99,12 +192,19 @@
   cursor: pointer;
   outline: none;
   transition: border-color 0.15s;
+  white-space: nowrap;
 }
 .roleSelect:focus { border-color: var(--primary-light); }
 .roleSelect:disabled { opacity: 0.5; cursor: not-allowed; }
 
 .emptyRow { text-align: center; color: #aaa; padding: 2rem !important; }
 
+@media (max-width: 768px) {
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 640px) {
-  .table th:nth-child(2), .table td:nth-child(2) { display: none; }
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+  .analyticsControls { flex-direction: column; }
+  .analyticsControls .search { margin-bottom: 0; }
 }
