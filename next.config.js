@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    browsersListForSwc: true,
+    optimizeCss: true,
   },
   images: {
     formats: ['image/webp', 'image/avif'],

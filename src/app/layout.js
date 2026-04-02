@@ -25,7 +25,8 @@ export default function RootLayout({ children }) {
     <html lang="id">
       <head>
         <link rel="icon" type="image/png" href="/icon-192.png" />
-        <link rel="preconnect" href="https://ewsxditmxzbyedhzwgps.supabase.co" />
+        <link rel="preconnect" href="https://ewsxditmxzbyedhzwgps.supabase.co" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
       </head>
       <body>
