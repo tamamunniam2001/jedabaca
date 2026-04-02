@@ -31,6 +31,9 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://nap5k.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://ewsxditmxzbyedhzwgps.supabase.co" />
         <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <script async src="https://5gvci.com/act/files/tag.min.js?z=10823010" data-cfasync="false" />
+        <script dangerouslySetInnerHTML={{ __html: `(function(s){s.dataset.zone='10823012',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))` }} />
+        <script dangerouslySetInnerHTML={{ __html: `(function(s){s.dataset.zone='10823018',s.src='https://nap5k.com/tag.min.js'})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))` }} />
       </head>
       <body>
         <Navbar />
@@ -44,9 +47,6 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
           strategy="afterInteractive"
         />
-        <Script src="https://5gvci.com/act/files/tag.min.js?z=10823010" data-cfasync="false" strategy="afterInteractive" />
-        <Script id="monetag-vignette" strategy="afterInteractive">{`(function(s){s.dataset.zone='10823012',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}</Script>
-        <Script id="monetag-inpage" strategy="afterInteractive">{`(function(s){s.dataset.zone='10823018',s.src='https://nap5k.com/tag.min.js'})([document.documentElement,document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}</Script>
       </body>
     </html>
   )
