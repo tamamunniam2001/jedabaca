@@ -36,7 +36,7 @@ function ExploreContent() {
       const from = (page - 1) * ITEMS_PER_PAGE
       const to = from + ITEMS_PER_PAGE - 1
 
-      let query = supabase.from('novels').select('*', { count: 'exact' })
+      let query = supabase.from('novels').select('id, title, slug, cover_image_url, author, genre, rating, publish_status, profiles!author_id(full_name, username)', { count: 'exact' })
         .eq('publish_status', 'published')
 
       if (q) query = query.ilike('title', `%${q}%`)

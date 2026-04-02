@@ -95,9 +95,9 @@
 
 /* Layout */
 .layout {
-  max-width: 1100px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 1rem;
 }
 
 /* Reader Container: article + floating panel berdampingan */
@@ -807,20 +807,34 @@
   .tocPopup { display: none; }
   .sharePopup { display: none; }
   .floatPanelMobile { display: flex; }
+  .layout { padding: 0.75rem; }
 }
 
 @media (max-width: 640px) {
-  .layout { padding: 1.25rem 1rem; }
+  .layout { padding: 0 0 5rem 0; }
 
   .article {
-    padding: 1.5rem;
+    padding: 1rem;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 0;
   }
 
-  .chapterTitle { font-size: 1.15rem; }
+  .chapterTitle { font-size: 1.1rem; }
   .chapterContent { font-size: 0.95rem; line-height: 1.8; }
 
-  .chapterNav { gap: 0.5rem; }
-  .navBtn, .navBtnOutline { padding: 0.55rem 0.875rem; font-size: 0.775rem; }
+  .chapterNav {
+    gap: 0.4rem;
+    padding: 0.75rem 1rem;
+    background: #fff;
+    border-top: 1px solid #f3f4f6;
+  }
+  .navBtn, .navBtnOutline { padding: 0.5rem 0.75rem; font-size: 0.75rem; }
+
+  .ratingSection { padding: 1rem; margin: 0 0 1rem; }
+  .commentBox { padding: 0 1rem; }
+  .relatedBox { padding: 0 1rem 1rem; }
 }
 
 /* Font Size Variants */
