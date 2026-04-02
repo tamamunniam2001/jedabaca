@@ -128,7 +128,7 @@ export default function ChapterPage() {
         if (ebookData) {
           const [{ data: profileData }, { data: relatedData }] = await Promise.all([
             supabase.from('profiles').select('full_name, username').eq('id', ebookData.author_id).single(),
-            supabase.from('novels').select('id, title, slug, cover_image_url, author')
+            supabase.from('novels').select('id, title, slug, cover_image_url, author, profiles!author_id(full_name, username)')
               .neq('id', chapterData.novel_id).eq('publish_status', 'published').limit(4),
           ])
           setAuthorName(profileData?.full_name || profileData?.username || ebookData.author || '')
@@ -469,7 +469,7 @@ export default function ChapterPage() {
                       </div>
                       <div className={styles.relatedInfo}>
                         <div className={styles.relatedCardTitle}>{r.title}</div>
-                        <div className={styles.relatedCardAuthor}>{r.author}</div>
+                        <div className={styles.relatedCardAuthor}>{r.profiles?.full_name || r.profiles?.username || r.author}</div>
                       </div>
                     </Link>
                   ))}
