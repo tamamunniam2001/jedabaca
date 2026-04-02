@@ -42,10 +42,9 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
         <Script
-          src="https://quge5.com/88/tag.min.js"
-          data-zone="225902"
-          async
+          src="https://5gvci.com/act/files/tag.min.js?z=10823010"
           data-cfasync="false"
+          async
           strategy="afterInteractive"
         />
       </body>
