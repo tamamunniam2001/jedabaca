@@ -32,6 +32,8 @@ export default function RootLayout({ children }) {
         <script dangerouslySetInnerHTML={{ __html: `(function(s){s.dataset.zone='10823012',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))` }} />
         {/* Monetag in-page push */}
         <script dangerouslySetInnerHTML={{ __html: `(function(s){s.dataset.zone='10823018',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))` }} />
+        {/* Monetag tag */}
+        <script src="https://5gvci.com/act/files/tag.min.js?z=10823010" data-cfasync="false" async />
       </head>
       <body>
         <Navbar />
@@ -43,12 +45,6 @@ export default function RootLayout({ children }) {
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7860007029832598"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-        <Script
-          src="https://5gvci.com/act/files/tag.min.js?z=10823010"
-          data-cfasync="false"
-          async
           strategy="afterInteractive"
         />
       </body>
