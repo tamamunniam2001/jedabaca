@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    browsersListForSwc: true,
+  },
   images: {
     formats: ['image/webp', 'image/avif'],
     minimumCacheTTL: 86400,
