@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import PWAInstaller from '@/components/PWAInstaller'
 import ServiceWorkerRegister from '@/components/ServiceWorkerRegister'
 import NativeBanner from '@/components/NativeBanner'
+import BannerAd from '@/components/BannerAd'
 import Script from 'next/script'
 
 export const metadata = {
@@ -42,11 +43,13 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Navbar />
+        <BannerAd />
         {children}
         <NativeBanner />
         <Footer />
         <PWAInstaller />
         <ServiceWorkerRegister />
+        <Script src="https://pl29045877.profitablecpmratenetwork.com/9c/f3/a4/9cf3a43df57d44b83522b8d8e6b4a72d.js" strategy="beforeInteractive" />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7860007029832598"
