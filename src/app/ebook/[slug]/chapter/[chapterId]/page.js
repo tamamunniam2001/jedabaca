@@ -17,6 +17,7 @@ export default function ChapterPage() {
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false)
   const [shareOpen, setShareOpen] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
+  const [fontSize, setFontSize] = useState('md') // sm | md | lg
   const [bookmarked, setBookmarked] = useState(false)
   const [bookmarkMsg, setBookmarkMsg] = useState('')
   const [relatedEbooks, setRelatedEbooks] = useState([])
@@ -42,10 +43,20 @@ export default function ChapterPage() {
   useEffect(() => {
     const saved = localStorage.getItem('readerDark')
     if (saved === 'true') setDarkMode(true)
+    const savedFont = localStorage.getItem('readerFont')
+    if (savedFont) setFontSize(savedFont)
   }, [])
 
   const toggleDark = () => {
     setDarkMode(d => { localStorage.setItem('readerDark', String(!d)); return !d })
+  }
+
+  const cycleFontSize = () => {
+    setFontSize(prev => {
+      const next = prev === 'sm' ? 'md' : prev === 'md' ? 'lg' : 'sm'
+      localStorage.setItem('readerFont', next)
+      return next
+    })
   }
 
   useEffect(() => {
@@ -246,7 +257,7 @@ export default function ChapterPage() {
   if (!chapter || !ebook) return <div className={styles.loadingWrap}><div className={styles.loading}>Bab tidak ditemukan</div></div>
 
   return (
-    <main className={`${styles.main} ${darkMode ? styles.dark : ''}`}>
+    <main className={`${styles.main} ${darkMode ? styles.dark : ''} ${styles['font_' + fontSize]}`}>
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <Link href={`/ebook/${ebookSlug}`} className={styles.backBtn}>← Kembali</Link>
@@ -469,6 +480,9 @@ export default function ChapterPage() {
             <button className={styles.floatItem} onClick={() => { setDrawerOpen(o => !o); setShareOpen(false) }} title="Daftar Bab">
               <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><path d="M3 5h14M3 10h14M3 15h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
             </button>
+            <button className={styles.floatItem} onClick={cycleFontSize} title={`Ukuran font: ${fontSize === 'sm' ? 'Kecil' : fontSize === 'md' ? 'Sedang' : 'Besar'}`}>
+              <span style={{ fontSize: fontSize === 'sm' ? '11px' : fontSize === 'md' ? '14px' : '17px', fontWeight: 800, fontFamily: 'Georgia, serif', lineHeight: 1 }}>A</span>
+            </button>
             <button className={styles.floatItem} onClick={toggleDark} title={darkMode ? 'Mode Terang' : 'Mode Gelap'}>
               {darkMode
                 ? <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><circle cx="10" cy="10" r="4" stroke="currentColor" strokeWidth="1.8"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.93 4.93l1.41 1.41M13.66 13.66l1.41 1.41M4.93 15.07l1.41-1.41M13.66 6.34l1.41-1.41" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
@@ -517,6 +531,9 @@ export default function ChapterPage() {
         {bookmarkMsg && <div className={styles.bookmarkMsgMobile}>{bookmarkMsg}</div>}
         <button className={styles.floatItemMobile} onClick={() => { setMobileDrawerOpen(o => !o); setShareOpen(false) }}>
           <svg viewBox="0 0 20 20" fill="none" width="18" height="18"><path d="M3 5h14M3 10h14M3 15h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
+        </button>
+        <button className={styles.floatItemMobile} onClick={cycleFontSize} title="Ukuran Font">
+          <span style={{ fontSize: fontSize === 'sm' ? '11px' : fontSize === 'md' ? '14px' : '17px', fontWeight: 800, fontFamily: 'Georgia, serif', lineHeight: 1, color: 'inherit' }}>A</span>
         </button>
         <button className={styles.floatItemMobile} onClick={toggleDark}>
           {darkMode

@@ -823,6 +823,20 @@
   .navBtn, .navBtnOutline { padding: 0.55rem 0.875rem; font-size: 0.775rem; }
 }
 
+/* Font Size Variants */
+.font_sm .chapterContent { font-size: 0.875rem; line-height: 1.85; }
+.font_md .chapterContent { font-size: 1rem; line-height: 1.9; }
+.font_lg .chapterContent { font-size: 1.2rem; line-height: 2; }
+
+.font_sm .chapterTitle { font-size: 1.6rem; }
+.font_lg .chapterTitle { font-size: 2.4rem; }
+
+@media (max-width: 640px) {
+  .font_sm .chapterContent { font-size: 0.825rem; }
+  .font_md .chapterContent { font-size: 0.95rem; }
+  .font_lg .chapterContent { font-size: 1.1rem; }
+}
+
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
