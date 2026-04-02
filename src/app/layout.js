@@ -22,10 +22,9 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" type="image/png" href="/icon-192.png" />
         <script
-          src="https://quge5.com/88/tag.min.js"
-          data-zone="225841"
           async
-          data-cfasync="false"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7860007029832598"
+          crossOrigin="anonymous"
         />
       </head>
       <body>
