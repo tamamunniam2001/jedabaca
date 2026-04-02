@@ -2,10 +2,16 @@
 import { useEffect, useState } from 'react'
 import { useRouter, useParams } from 'next/navigation'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { supabase } from '@/lib/supabase'
-import RichEditor from '@/components/RichEditor'
-import ChapterPreview from '@/components/ChapterPreview'
 import styles from './page.module.css'
+
+const RichEditor = dynamic(() => import('@/components/RichEditor'), {
+  ssr: false,
+  loading: () => <div style={{ height: 300, background: '#f8f7fc', borderRadius: 8, border: '1.5px solid #e8e4f0' }} />
+})
+
+const ChapterPreview = dynamic(() => import('@/components/ChapterPreview'), { ssr: false })
 
 const GENRES = ['Romance', 'Fantasy', 'Thriller', 'Horror', 'Drama', 'Komedi', 'Misteri', 'Sci-Fi', 'Slice of Life', 'Lainnya']
 
