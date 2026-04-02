@@ -8,7 +8,7 @@ const supabaseServer = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 )
 
-export const revalidate = 300 // revalidate setiap 5 menit
+export const revalidate = 600 // revalidate setiap 10 menit
 
 export default async function HomePage() {
   // Fetch data di server — tidak perlu tunggu JS di browser
@@ -17,7 +17,7 @@ export default async function HomePage() {
       .select('id, title, slug, cover_image_url, author, genre, rating, publish_status, profiles!author_id(full_name, username)')
       .eq('publish_status', 'published')
       .order('rating', { ascending: false })
-      .limit(6),
+      .limit(3),
     supabaseServer.from('novels')
       .select('id, title, slug, cover_image_url, author, genre, rating, publish_status, profiles!author_id(full_name, username)', { count: 'exact' })
       .eq('publish_status', 'published')
