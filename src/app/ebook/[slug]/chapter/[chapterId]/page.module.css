@@ -2,6 +2,8 @@
   min-height: 100vh;
   background: #f5f5f5;
   transition: background var(--transition-fast), color var(--transition-fast);
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Dark Mode */
@@ -95,19 +97,24 @@
 
 /* Layout */
 .layout {
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
   padding: 1rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
-/* Reader Container: article + floating panel berdampingan */
+/* Reader Container */
 .readerContainer {
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
   max-width: 760px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
+  box-sizing: border-box;
 }
 
 /* Article */
@@ -123,6 +130,9 @@
   padding: 2.5rem;
   margin-bottom: 1.5rem;
   animation: slideUp 400ms ease-out;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Ebook Header */
@@ -811,30 +821,36 @@
 }
 
 @media (max-width: 640px) {
-  .layout { padding: 0 0 5rem 0; }
+  .layout { padding: 0; }
+  .readerContainer { gap: 0; }
 
   .article {
     padding: 1rem;
     border-radius: 0;
     border-left: none;
     border-right: none;
+    border-top: none;
     margin-bottom: 0;
   }
 
   .chapterTitle { font-size: 1.1rem; }
   .chapterContent { font-size: 0.95rem; line-height: 1.8; }
+  .chapterContent :global(img) { max-width: 100%; height: auto; }
 
   .chapterNav {
     gap: 0.4rem;
     padding: 0.75rem 1rem;
     background: #fff;
     border-top: 1px solid #f3f4f6;
+    flex-wrap: wrap;
   }
   .navBtn, .navBtnOutline { padding: 0.5rem 0.75rem; font-size: 0.75rem; }
 
-  .ratingSection { padding: 1rem; margin: 0 0 1rem; }
-  .commentBox { padding: 0 1rem; }
-  .relatedBox { padding: 0 1rem 1rem; }
+  .ratingSection { padding: 1rem; margin: 0 0 0; }
+  .commentBox { padding: 0 1rem 1rem; }
+  .relatedBox { padding: 0 1rem 5rem; }
+
+  .headerInner { padding: 0 1rem; }
 }
 
 /* Font Size Variants */
