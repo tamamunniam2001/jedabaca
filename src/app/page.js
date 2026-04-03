@@ -1,7 +1,6 @@
 import { createClient } from '@supabase/supabase-js'
 import NovelCard from '@/components/NovelCard'
 import NovelListClient from '@/components/NovelListClient'
-import NativeBanner from '@/components/NativeBanner'
 import styles from './page.module.css'
 
 const supabaseServer = createClient(
@@ -9,16 +8,15 @@ const supabaseServer = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 )
 
-export const revalidate = 600 // revalidate setiap 10 menit
+export const revalidate = 300
 
 export default async function HomePage() {
-  // Fetch data di server — tidak perlu tunggu JS di browser
   const [{ data: recommended }, { data: novels, count }] = await Promise.all([
     supabaseServer.from('novels')
       .select('id, title, slug, cover_image_url, author, genre, rating, publish_status, profiles!author_id(full_name, username)')
       .eq('publish_status', 'published')
       .order('rating', { ascending: false })
-      .limit(3),
+      .limit(6),
     supabaseServer.from('novels')
       .select('id, title, slug, cover_image_url, author, genre, rating, publish_status, profiles!author_id(full_name, username)', { count: 'exact' })
       .eq('publish_status', 'published')
@@ -28,7 +26,6 @@ export default async function HomePage() {
 
   return (
     <main className={styles.main}>
-      {/* Rekomendasi — SSR */}
       {recommended?.length > 0 && (
         <section className={styles.recSection}>
           <div className={styles.container}>
@@ -44,11 +41,6 @@ export default async function HomePage() {
           </div>
         </section>
       )}
-
-      {/* Native Banner Ad */}
-      <NativeBanner />
-
-      {/* Novel List */}
       <NovelListClient initialNovels={novels || []} initialTotal={count || 0} />
     </main>
   )
